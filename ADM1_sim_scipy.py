@@ -293,7 +293,7 @@ def ADM1_model(t, x):
     reac[8] = (1.0 - Y_ac) * proc11 + (1.0 - Y_h2) * proc12 - procT9 # S_ch4
     reac[9] = -stoich1 * proc1 - stoich2 * proc2 - stoich3 * proc3 - stoich4 * proc4 - stoich5 * proc5 - stoich6 * proc6 - stoich7 * proc7 - stoich8 * proc8 - stoich9 * proc9 - stoich10 * proc10 - stoich11 * proc11 - stoich12 * proc12 - stoich13 * proc13 - stoich13 * proc14 - stoich13 * proc15 - stoich13 * proc16 - stoich13 * proc17 - stoich13 * proc18 - stoich13 * proc19 - procT10 # S_IC
     reac[10] = (N_xc - f_xI_xc * N_I - f_sI_xc * N_I - f_pr_xc * N_aa) * proc1 - Y_su * N_bac * proc5 + (N_aa - Y_aa * N_bac) * proc6 - Y_fa * N_bac * proc7 - Y_c4 * N_bac * proc8 - Y_c4 * N_bac * proc9 - Y_pro * N_bac * proc10 - Y_ac * N_bac * proc11 - Y_h2 * N_bac * proc12 + (N_bac - N_xc) * (proc13 + proc14 + proc15 + proc16 + proc17 + proc18 + proc19) # S_IN
-    reac[11] = f_sI_xc * proc1 # S_I
+    reac[11] = f_sI_xc * proc1 # S_I 
     reac[12] = -proc1 + proc13 + proc14 + proc15 + proc16 + proc17 + proc18 + proc19 # X_c
     reac[13] = f_ch_xc * proc1 - proc2 # X_ch
     reac[14] = f_pr_xc * proc1 - proc3 # X_pr
