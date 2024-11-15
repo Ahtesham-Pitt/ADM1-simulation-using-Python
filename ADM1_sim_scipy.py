@@ -413,6 +413,16 @@ df_validation = pd.DataFrame({
     'x_ss_python': np.round(x_ss_python,4),
     'x_ss_BSM2': np.round(x_ss_BSM2,4) })
 
+# Provide an index to each row of the above data frame
+index_list = [
+    "S_su", "S_aa", "S_fa", "S_va", "S_bu", "S_pro", "S_ac", "S_h2", "S_ch4", "S_IC", "S_IN", "S_I",
+    "X_c", "X_ch", "X_pr", "X_li", "X_su", "X_aa", "X_fa", "X_c4", "X_pro", "X_ac", "X_h2", "X_I",
+    "S_cat+", "S_an-", "S_va-", "S_bu-", "S_pro-", "S_ac-", "S_HCO3-", "S_NH3",
+    "S_gas,h2", "S_gas,ch4", "S_gas,co2", "q_gas"
+]
+
+# Set the list as the index of the DataFrame
+df_validation.index = index_list
 # Display the comparison table
 pd.options.display.float_format = '{:.4f}'.format # To display 4 decimal places without scientific notation
 print(df_validation)
