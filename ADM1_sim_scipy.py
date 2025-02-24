@@ -377,7 +377,7 @@ def ADM1_model(t, x):
 
 #%% Solve the ADM1's system of ODEs using SciPy's solve_ivp (initial value problem solver)
 t_span = [0, 200] # days
-y0 = 5*DIGESTERINIT # initial conditions
+y0 = DIGESTERINIT # initial conditions
 sol = solve_ivp(ADM1_model, t_span, y0, method = 'BDF', dense_output=True) # solve using ivp
 t_out = sol.t # extract time from solution
 x_out = sol.y # extract states from solution
