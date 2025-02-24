@@ -53,6 +53,9 @@ DIGESTERINIT = np.array([
 
 #%% Define the ADM1 Model - System of ODEs
 def ADM1_model(t, x):
+    for i in range(len(x)):
+        if x[i] < 0.0:
+            x[i]=0
     # Stoichiometric parameter values from Benchmark Simulation Model no. 2 (BSM2)
     f_sI_xc = 0.1
     f_xI_xc = 0.2
@@ -194,7 +197,8 @@ def ADM1_model(t, x):
 
     # Total gas flow rate
     q_gas = k_P * (P_gas - P_atm)
-
+    if q_gas<=0:
+        q_gas=0
     # Hill function calculations
     pHLim_aa = 10 ** (-(pH_UL_aa + pH_LL_aa) / 2.0)
     pHLim_ac = 10 ** (-(pH_UL_ac + pH_LL_ac) / 2.0)
